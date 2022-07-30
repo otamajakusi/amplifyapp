@@ -1,26 +1,9 @@
-/*
-import React from 'react';
-import './App.css';
-
-import { withAuthenticator } from '@aws-amplify/ui-react'
-import '@aws-amplify/ui-react/styles.css';
-
-function App({ signOut, user }) {
-  return (
-    <>
-      <h1>Hello {user.username}</h1>
-      <button onClick={signOut}>Sign out</button>
-    </>
-  );
-}
-
-export default withAuthenticator(App);
-*/
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API, Storage } from 'aws-amplify';
+// https://ui.docs.amplify.aws/react/connected-components/authenticator
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
@@ -104,6 +87,7 @@ function App({ signOut, user }) {
           ))
         }
       </div>
+      <button onClick={signOut}>Sign out</button>
     </div>
   );
 }
